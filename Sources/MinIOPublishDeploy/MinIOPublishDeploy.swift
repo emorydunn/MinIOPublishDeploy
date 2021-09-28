@@ -18,7 +18,7 @@ public extension DeploymentMethod {
     ///   - alias: Alias of the MinIO host
     ///   - path: Path to upload files to
     ///   - mcBinary: Path to the `mc` binary
-    static func minio(_ alias: String, path: String, pathToMCBinary binPath: String = "/usr/local/bin/mc")  -> Self {
+    static func minio(_ alias: String, path: String, pathToMCBinary binPath: String = "mc")  -> Self {
         
         Self(name: "MinIO \(alias)") { context in
             let deploymentFolder = try! context.createDeploymentFolder(withPrefix: "minio-") { _ in }
